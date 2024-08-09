@@ -19,10 +19,17 @@ public class EmployeeWage {
 		
 		double wagePerHour = 20;
 		int fullDayHour = 8;
+		int partTime = 4;
+
 		
-		double dailyEmpWage = wagePerHour * fullDayHour;
+		double dailyEmpWageForFullTime = wagePerHour * fullDayHour;
 		
-		System.out.println("Daily Employee Wage is "+ dailyEmpWage);
+		System.out.println("Daily Employee Wage is "+ dailyEmpWageForFullTime);
+		
+		
+		double dailyEmpWageForPartTime = wagePerHour * partTime;
+		
+		System.out.println("Daily Employee Wage is "+ dailyEmpWageForPartTime);
 
 
 	}
