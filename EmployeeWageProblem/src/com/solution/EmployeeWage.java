@@ -20,11 +20,16 @@ public class EmployeeWage {
 			System.out.println("Employee is not Present");
 		}
 		
-		double wagePerHour = 20;
-		int fullDayHour = 8;
-		int partTime = 4;
-		double monthlyWage;
-        final int workingDaysPerMonth = 20;
+		 double wagePerHour = 20;
+	 	 
+		 final int maxHours = 100;
+		 final int maxDays = 20;
+		 final int partTime = 4;
+		 
+		 double dailyWage;
+		 double totalWage = 0;
+	     int totalHoursWorked = 0;
+	     int totalDaysWorked = 0;
 
 		System.out.println("Select Employee Type:");
         System.out.println("1. Full-Time");
@@ -32,22 +37,38 @@ public class EmployeeWage {
         System.out.print("Enter your choice : ");
 		int choice = sc.nextInt();
 	
-        switch(choice) {
-		
-		case 1 :
-			double dailyEmpWage = wagePerHour * fullDayHour;
-			monthlyWage = dailyEmpWage * workingDaysPerMonth;
-			System.out.println("Monthly Employee Wage for full time is "+ monthlyWage);
-			break;
-		case 2:
-			double partTimeEmpWage = wagePerHour * partTime;
-			monthlyWage = partTimeEmpWage * workingDaysPerMonth;
-			System.out.println("Monthly Employee Wage for part time is "+ monthlyWage);
-			break;
-			
-		default:
-			System.out.println("Invalid Choice");
-        }
+		switch (choice) {
+        case 1:
+            
+            double hoursWorkedPerDay = 10;
+
+            while (totalHoursWorked < maxHours && totalDaysWorked < maxDays) {
+
+           	 dailyWage = wagePerHour * hoursWorkedPerDay;
+                totalWage += dailyWage;
+
+                totalHoursWorked += hoursWorkedPerDay;
+                totalDaysWorked++;
+            }
+            System.out.printf("The total wage for a Full-Time employee is: "+ totalWage);
+            break;
+
+        case 2:
+
+            while (totalHoursWorked < maxHours && totalDaysWorked < maxDays) {
+
+           	 dailyWage = wagePerHour * partTime;
+                totalWage += dailyWage;
+                totalHoursWorked += partTime;
+                totalDaysWorked++;
+            }
+            System.out.printf("The total wage for a Part-Time employee is: ", totalWage);
+            break;
+
+        default:
+            System.out.println("Invalid choice");
+            break;
+    }
 		sc.close();
 
 	}
