@@ -16,6 +16,14 @@ public class EmployeeWage {
 		}else {
 			System.out.println("Employee is not Present");
 		}
+		
+		double wagePerHour = 20;
+		int fullDayHour = 8;
+		
+		double dailyEmpWage = wagePerHour * fullDayHour;
+		
+		System.out.println("Daily Employee Wage is "+ dailyEmpWage);
+
 
 	}
 
